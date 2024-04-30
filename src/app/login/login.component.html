@@ -1,0 +1,57 @@
+
+<div class="parent"> 
+    <div class="container" [ngClass]="isSignDivVisible ? 'active' :'' " id="container">
+        <div class="form-container sign-up" >
+            <form>
+                <h2>Create Account</h2>
+                <span>Use your email for registration</span>
+
+
+                
+                <input type="text" name="Firstname" [(ngModel)]="signUpObj.name" placeholder="Name">
+                <input type="text" name="name" [(ngModel)]="signUpObj.name" placeholder="Name">
+                <input type="email" name="email" [(ngModel)]="signUpObj.email" placeholder="Email">
+                <input type="password" name="password" [(ngModel)]="signUpObj.password" placeholder="Password">
+
+<select name="role" [(ngModel)]="signUpObj.role">
+  <option value="" disabled selected hidden>Choose Role</option>
+  <option value="student">Student</option>
+  <option value="admin">Admin</option>
+</select>
+
+                <button (click)="onRegister()">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in" >
+            <form>
+                <h1>Sign In</h1>
+                
+                <span>Use your email password</span>
+                <input type="email" name="email" [(ngModel)]="loginObj.email" placeholder="Email">
+                <input type="password" name="password"   [(ngModel)]="loginObj.password" placeholder="Password">
+                <a href="#">→ Forget Your Password? ←</a>
+                <button (click)="gotoform()">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/77/Bannari_Amman_Institute_of_Technology_logo.png" alt="Bannari Amman Institute of Technology Logo" width="100" height="100">
+
+                    <h1>Welcome Student!</h1>
+                    <p>Enter your Mail and Password</p>
+                    <button type="button" class="hidden" id="login" (click)="isSignDivVisible = false">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/77/Bannari_Amman_Institute_of_Technology_logo.png" alt="Bannari Amman Institute of Technology Logo" width="100" height="100">
+
+                    <h1>Hello, Student!</h1>
+                    <p>Register here to create an Account</p>
+                    <button type="button" class="hidden" id="register" (click)="redirectToRegister()">Sign Up</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

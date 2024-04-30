@@ -1,0 +1,22 @@
+<form (ngSubmit)="checkAvailability()" #eventForm="ngForm">
+    <div class="form-group">
+      <label for="eventName">Event Name</label>
+      <input type="text" class="form-control" id="eventName" name="eventName" [(ngModel)]="eventName" required>
+    </div>
+    <div class="form-group">
+      <label for="taskId">Task ID</label>
+      <input type="text" class="form-control" id="taskId" name="taskId" [(ngModel)]="taskId" required>
+    </div>
+    <div class="form-group">
+      <label for="eventDate">Event Date and Time</label>
+      <input type="datetime-local" class="form-control" id="eventDate" name="eventDate" [(ngModel)]="eventDate" required>
+    </div>
+    <div class="form-group">
+      <label for="facultyInCharge">Faculty In Charge</label>
+      <select class="form-control" id="facultyInCharge" name="facultyInCharge" [(ngModel)]="facultyInCharge" required>
+        <option *ngFor="let faculty of faculties" [value]="faculty">{{ faculty }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Check Availability</button>
+  </form>
+  
